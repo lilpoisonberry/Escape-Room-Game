@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Classroom 04</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cover" id="cover">
+      <p class="p1 center-content">Press F11 To Play</p>
+    </div>
+    <div class="cover" id="endCover"></div>
+    <div class="full">
+      <div class="row1">
+        <div
+          class="column option"
+          onclick="showDoorModal()"
+        ></div>
+        <div class="middle ">
+          <div class="box3 option" onclick="showCModal()"></div>
+          <div class="box2 opaque" onclick="dollVL()"></div>
+          <div class="box4  center-content" onclick="playCD()" id="cdPlayer">
+          <img src="images/cdPlayer.png">
+        </div>
+        </div>
+        <div class="column"></div>
+      </div>
+      <div class="row2">
+        <div
+          class="box center-content option"
+          onclick="showD1Modal()"
+        ></div>
+        <div
+          class="box  center-content option"
+          onclick="showD2Modal()"
+        ></div>
+        <div
+          class="box center-content option"
+          onclick="showD3Modal()"
+        ></div>
+      </div>
+      <audio id="backAmbience" loop autoplay>
+        <source src="SFX/scary_sounds_ambience.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="ticking" loop>
+        <source src="SFX/ticktick.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="dOpen">
+        <source src="SFX/Drawer_open.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="dClose">
+        <source src="SFX/Drawer_close.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="clockTick">
+        <source src="SFX/tick.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="dBoom">
+        <source src="SFX/boom.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="keyJingle">
+        <source src="SFX/keyjingle.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="dollVoice">
+        <source src="SFX/doll_VL.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="dollVoiceCode">
+        <source src="SFX/doll_VL_code.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="secretSong">
+        <source src="SFX/ERIC_GIVE_ME_A_4.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="doorOpen">
+        <source src="SFX/doorCreak.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="ventOpenSFX">
+        <source src="SFX/ventOpenSFX.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="ventMove">
+        <source src="SFX/ventMove.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="lockSound">
+        <source src="SFX/lockSFX.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="scarySong" video.volume = "0.1" loop>
+        <source src="SFX/scarySong.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="escape"  loop>
+        <source src="SFX/Escape_Sound_Effect.mp3" type="audio/mpeg" />
+      </audio>
+      <div class="startModal center-content" id="startModal">
+        <!-- this is the "X" button to close the modal -->
+        <span class="close" style="font-size: 100px" onclick="hideStartModal()"
+          >&times;</span
+        >
+        <!-- this is a new blank canvas for you to build -->
+        <div class="center-content startModalContent">
+      </div>
+    </div>
+      <div class="clockModal center-content" id="clockModal">
+        <!-- this is the "X" button to close the modal -->
+        <span class="close" style="font-size: 100px" onclick="hideCModal()"
+          >&times;</span
+        >
+        <!-- this is a new blank canvas for you to build -->
+        <div class="center-content">
+          <img src="images/clocktuah.png" />
+        </div>
+      </div>
+      <div class="keyModal center-content" id="keyModal3">
+        <!-- this is the "X" button to close the modal -->
+        <span class="close" style="font-size: 100px" onclick="hideKeyModal3()"
+          >&times;</span
+        >
+        <!-- this is a new blank canvas for you to build -->
+        <div class="center-content key-modal-content">
+          <img src="images/key.png" onclick="hideKeyModal3()" />
+        </div>
+      </div>
+      <div class="desk1Modal center-content" id="desk1Modal">
+        <!-- this is the "X" button to close the modal -->
+        <span class="close" style="font-size: 100px" onclick="hideD1Modal()"
+          >&times;</span
+        >
+        <div class="desk1-modal-content center-content">
+          <div class="m1Row center-content">
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/12.png"
+                id="n1b1"
+                onclick="n1b1Scroll() , tCheck1()"
+              />
+            </div>
+            <div class="m1Box2 center-content">
+              <img src="images/colon.png" id="colon1" />
+            </div>
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/0.png"
+                id="n2b1"
+                onclick="n2b1Scroll() , tCheck1()"
+              />
+            </div>
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/0.png"
+                id="n3b1"
+                onclick="n3b1Scroll() , tCheck1()"
+              />
+            </div>
+          </div>
+          <div class="m1Row">
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/12.png"
+                id="n1b2"
+                onclick="n1b2Scroll() , tCheck2()"
+              />
+            </div>
+            <div class="m1Box2 center-content">
+              <img src="images/colon.png" id="colon2" />
+            </div>
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/0.png"
+                id="n2b2"
+                onclick="n2b2Scroll() , tCheck2()"
+              />
+            </div>
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/0.png"
+                id="n3b2"
+                onclick="n3b2Scroll() , tCheck2()"
+              />
+            </div>
+          </div>
+          <div class="m1Row">
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/12.png"
+                id="n1b3"
+                onclick="n1b3Scroll() , tCheck3()"
+              />
+            </div>
+            <div class="m1Box2 center-content">
+              <img src="images/colon.png" id="colon3" />
+            </div>
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/0.png"
+                id="n2b3"
+                onclick="n2b3Scroll() , tCheck3()"
+              />
+            </div>
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/0.png"
+                id="n3b3"
+                onclick="n3b3Scroll() , tCheck3()"
+              />
+            </div>
+          </div>
+          <div class="m1Row">
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/12.png"
+                id="n1b4"
+                onclick="n1b4Scroll() , tCheck4()"
+              />
+            </div>
+            <div class="m1Box2 center-content">
+              <img src="images/colon.png" id="colon4" />
+            </div>
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/0.png"
+                id="n2b4"
+                onclick="n2b4Scroll() , tCheck4()"
+              />
+            </div>
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/0.png"
+                id="n3b4"
+                onclick="n3b4Scroll() , tCheck4()"
+              />
+            </div>
+          </div>
+          <div class="m1Row">
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/12.png"
+                id="n1b5"
+                onclick="n1b5Scroll() , tCheck5()"
+              />
+            </div>
+            <div class="m1Box2 center-content">
+              <img src="images/colon.png" id="colon5" />
+            </div>
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/0.png"
+                id="n2b5"
+                onclick="n2b5Scroll() , tCheck5()"
+              />
+            </div>
+            <div class="m1Box1 center-content">
+              <img
+                src="images/numbers/0.png"
+                id="n3b5"
+                onclick="n3b5Scroll() , tCheck5()"
+              />
+            </div>
+          </div>
+          <div class="keyModal center-content" id="keyModal">
+            <!-- this is the "X" button to close the modal -->
+            <span class="close" style="font-size: 100px" onclick="hideKeyModal()"
+              >&times;</span
+            >
+            <!-- this is a new blank canvas for you to build -->
+            <div class="center-content key-modal-content">
+              <img src="images/key.png" onclick="hideKeyModal()" />
+            </div>
+          </div>
+          <div class="secretModal center-content" id="secretModal">
+            <!-- this is the "X" button to close the modal -->
+            <span
+              class="close"
+              style="font-size: 100px"
+              onclick="hideSecretModal()"
+              >&times;</span
+            >
+            <!-- this is a new blank canvas for you to build -->
+            <div class="center-content secret-modal-content"></div>
+          </div>
+        </div>
+      </div>
+      <div class="desk2Modal center-content" id="desk2Modal">
+        <!-- this is the "X" button to close the modal -->
+        <span class="close" style="font-size: 100px" onclick="hideD2Modal()"
+          >&times;</span
+        >
+        <div class="desk2-modal-content center-content">
+          <div class="m2Row center-content">
+            <input type="text" id="tAnswer" autocomplete="off" />
+            <input
+              type="submit"
+              value="Enter"
+              id="Submit"
+              class=""
+              onclick="checkInputD2()"
+            />
+            <div class="keyModal center-content" id="keyModal2">
+              <!-- this is the "X" button to close the modal -->
+              <span
+                class="close"
+                style="font-size: 100px"
+                onclick="hideKeyModal2()"
+                >&times;</span
+              >
+              <!-- this is a new blank canvas for you to build -->
+              <div class="center-content key-modal-content">
+                <img src="images/key.png" onclick="hideKeyModal2()" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="desk3Modal center-content" id="desk3Modal">
+              <!-- this is the "X" button to close the modal -->
+              <span class="close" style="font-size: 100px" onclick="hideD3Modal()"
+                >&times;</span
+              >
+              <div class="desk3-modal-content center-content">
+                <div class="screwdriverBox  center-content">
+                  <img src="images/screw.png " class="clickable" onclick="gainScrew()" id="SD">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="doorModal center-content" id="doorModal">
+        <!-- this is the "X" button to close the modal -->
+        <span class="close" style="font-size: 100px" onclick="hideDoorModal()"
+          >&times;</span
+        >
+        <!-- this is a new blank canvas for you to build -->
+        <div class="center-content door-modal-content" id="bgPic">
+          <div class="center-content keyBox option pointer" id="lock" onclick="useKey()">
+            <img src="images/usekey.png">
+          </div>
+          <div
+            class="ventBox center-content clickable ventOpenImage"
+            onclick="ventModalCheck()"
+            id="ventE"
+          ></div>
+        </div>
+        <div class="ventModal center-content" id="ventModal">
+          <!-- this is the "X" button to close the modal -->
+          <span class="close" style="font-size: 100px" onclick="hideVentModal()"
+            >&times;</span
+          >
+          <!-- this is a new blank canvas for you to build -->
+          <div class="center-content vent-modal-content">
+            <div class="cdBox center-content">
+              <img src="images/cd.png" onclick="gainCD()" id="cd">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="preload.js"></script>
+  </body>
+</html>
