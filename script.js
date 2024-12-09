@@ -811,7 +811,7 @@ function changeDoorBackground() {
     document.getElementById("scarySong").pause();
     ecv.style.display = "flex";
     setTimeout(function () {
-      window.location.href = "https://m6rwpx.csb.app/";
+      window.location.href = "https://diskrio.github.io/David-s-Escape-Room/";
     }, 12000);
   }
 }
