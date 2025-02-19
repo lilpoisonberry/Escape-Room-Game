@@ -836,4 +836,4 @@ function secretWinCheck() {
     showSecretModal();
   }
 }
-setInterval(cover, 1);
+//setInterval(cover, 1);
